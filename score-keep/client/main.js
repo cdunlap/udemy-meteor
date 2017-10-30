@@ -3,21 +3,16 @@ import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker';
 import {Players} from '../imports/api/players';
-import TitleBar from '../imports/ui/TitleBar';
-import AddPlayer from '../imports/ui/AddPlayer';
-import PlayerList from '../imports/ui/PlayerList';
+import App from '../imports/ui/App';
 
 Meteor.startup( () => {
   Tracker.autorun( () => {
-    const players = Players.find().fetch();
-    const jsx = (
-      <div>
-        <TitleBar title="Score Keep" subtitle="Created by Cale Dunlap"/>
-        <PlayerList players={players} />
-        <AddPlayer />
-      </div>
-    );
-    ReactDOM.render(jsx, document.getElementById('app'));
+    const players = Players.find({}, {
+      sort: {
+        score: -1
+      }
+    }).fetch();
+    ReactDOM.render(<App title="Score Keep" players={players} />, document.getElementById('app'));
   });
 
 });
