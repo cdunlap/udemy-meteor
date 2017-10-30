@@ -10,7 +10,7 @@ export default class PlayerList extends React.Component {
     }
     return (
       <div className="item">
-        <p>Add your first player to get started</p>
+        <p className="item__message item__message--empty">Add your first player to get started</p>
       </div>
     )
   }
