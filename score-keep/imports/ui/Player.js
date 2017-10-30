@@ -4,8 +4,10 @@ import {Players} from '../api/players';
 export default class Player extends React.Component {
   render () {
     return (
-      <p>
-        {this.props.player.name} has {this.props.player.score} point(s).
+      <div key={this.props.player._id} className="item">
+        <p>
+          {this.props.player.name} has {this.props.player.score} point(s).
+        </p>
         <button onClick={() => {
           Players.update({_id: this.props.player._id}, {$inc: {score: 1}});
         }}>+1</button>
@@ -17,7 +19,7 @@ export default class Player extends React.Component {
         <button onClick={() => {
           Players.remove({_id: this.props.player._id});
         }}>X</button>
-      </p>
+      </div>
     )
   }
 }

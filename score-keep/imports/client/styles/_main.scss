@@ -10,6 +10,7 @@ html {
 body {
   color: #555555;
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
 }
 
 h1 {
@@ -19,3 +20,4 @@ h1 {
 
 @import 'components/title-bar';
 @import 'components/wrapper';
+@import 'components/item';
