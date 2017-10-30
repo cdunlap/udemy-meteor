@@ -5,13 +5,7 @@ import {Tracker} from 'meteor/tracker';
 import {Players} from '../imports/api/players';
 import TitleBar from '../imports/ui/TitleBar';
 import AddPlayer from '../imports/ui/AddPlayer';
-import Player from '../imports/ui/Player';
-
-const renderPlayers = (playerList) => {
-  return playerList.map(player => {
-    return <Player key={player._id} player={player} />
-  });
-}
+import PlayerList from '../imports/ui/PlayerList';
 
 Meteor.startup( () => {
   Tracker.autorun( () => {
@@ -19,7 +13,7 @@ Meteor.startup( () => {
     const jsx = (
       <div>
         <TitleBar title="Score Keep" subtitle="Created by Cale Dunlap"/>
-        <div>{renderPlayers(players)}</div>
+        <PlayerList players={players} />
         <AddPlayer />
       </div>
     );
