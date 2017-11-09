@@ -36,13 +36,13 @@ export default class Login extends React.Component {
         
         {this.state.error ? <p>{this.state.error}</p> : undefined}
         
-        <form onSubmit={this.onSubmit.bind(this)}>
+        <form onSubmit={this.onSubmit.bind(this)} noValidate>
           <input name="email" ref="email" type="email" placeholder="Email Address" />
           <input name="password" ref="password" type="password" placeholder="Password" />
           <button>Login</button>
         </form>
         
-        <Link to="/signup">Have an account?</Link>
+        <Link to="/signup">Need an account?</Link>
       </div>
     )
   }
