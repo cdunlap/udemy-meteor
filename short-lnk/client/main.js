@@ -44,11 +44,9 @@ Tracker.autorun(() => {
   if(isAuthenticated && isUnAuthenticatedPage) {
     // Redirect to links
     browserHistory.replace('/links');
-    console.log('Redirecting to /links');
   } else if(!isAuthenticated && isAuthenticatedPage) {
     // Redirect to home
     browserHistory.replace('/');
-    console.log('Redirecting to /');
   }
 });
 
