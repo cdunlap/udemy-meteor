@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
+import SimpleSchema from 'simpl-schema';
 
 export const Links = new Mongo.Collection('links');
 
@@ -15,9 +16,22 @@ Meteor.methods({
       throw new Meteor.Error('unauthorized');
     }
     
-    Links.insert({
+    const link = {
       url,
       userId: this.userId
-    });
+    };
+    
+    new SimpleSchema({
+      url: {
+        label: 'Your link',
+        type: String,
+        regEx: SimpleSchema.RegEx.Url
+      },
+      userId: {
+        type: String
+      }
+    }).validate(link);
+    
+    Links.insert(link);
   }
 });
