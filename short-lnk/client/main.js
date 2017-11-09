@@ -14,11 +14,23 @@ window.browserHistory = browserHistory;
 const unauthenticatedPages = ['/', '/signup'];
 const authenticatedPages = ['/links'];
 
+const onEnterPublicPage = () => {
+  if(Meteor.userId()) {
+    browserHistory.replace('/links');
+  }
+};
+
+const onEnterPrivatePage = () => {
+  if(!Meteor.userId()) {
+    browserHistory.replace('/');
+  }
+};
+
 const routes = (
   <Router history={browserHistory}>
-    <Route path="/" component={Login} />
-    <Route path="/signup" component={Signup} />
-    <Route path="/links" component={Link} />
+    <Route path="/" component={Login} onEnter={onEnterPublicPage} />
+    <Route path="/signup" component={Signup} onEnter={onEnterPublicPage} />
+    <Route path="/links" component={Link} onEnter={onEnterPrivatePage} />
     <Route path="*" component={NotFound} />
   </Router>
 );
@@ -31,10 +43,12 @@ Tracker.autorun(() => {
   
   if(isAuthenticated && isUnAuthenticatedPage) {
     // Redirect to links
-    browserHistory.push('/links');
+    browserHistory.replace('/links');
+    console.log('Redirecting to /links');
   } else if(!isAuthenticated && isAuthenticatedPage) {
     // Redirect to home
-    browserHistory.push('/');
+    browserHistory.replace('/');
+    console.log('Redirecting to /');
   }
 });
 
