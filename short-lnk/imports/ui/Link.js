@@ -5,14 +5,12 @@ import LinksList from './LinksList';
 import AddLink from './AddLink';
 import PrivateHeader from './PrivateHeader';
 
-export default class Link extends React.Component {
-  render() {
-    return (
-      <div>
-        <PrivateHeader title="Your Links"/>
-        <LinksList/>
-        <AddLink/>
-      </div>
-    );
-  }
-}
+export default () => {
+  return (
+    <div>
+      <PrivateHeader title="Your Links"/>
+      <LinksList/>
+      <AddLink/>
+    </div>
+  );
+};
