@@ -24,6 +24,9 @@ Meteor.methods({
     };
     
     new SimpleSchema({
+      _id: {
+        type: String
+      },
       url: {
         label: 'Your link',
         type: String,
