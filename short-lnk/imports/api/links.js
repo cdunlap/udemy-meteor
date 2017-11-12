@@ -35,6 +35,9 @@ Meteor.methods({
       },
       userId: {
         type: String
+      },
+      visible: {
+        type: Boolean
       }
     }).validate(link);
     
