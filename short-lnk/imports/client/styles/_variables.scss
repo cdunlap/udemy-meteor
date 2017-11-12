@@ -1,3 +1,7 @@
+// Colors
+$grey: #ddd;
+$brand-primary: #f24c27;
+
 // Font sizes
 $base-font-size: 1.4rem;
 $font-family: 'Rubik', sans-serif;
@@ -5,11 +9,23 @@ $font-family: 'Rubik', sans-serif;
 // Spacing
 $space: 1.4rem;
 
-$font-color: #222;
+$font-color: #3b3f42; // #222;
 $link-color: #000;
 
-$input-border: #ddd;
+$input-border: $grey;
 
 // Boxed view
-$boxed-view-overlay-bg: #fefefe;
+$boxed-view-overlay-bg: #3b3f42; // #fefefe;
 $boxed-view-bg: #56b9d0;
+
+// Buttons
+$button-bg-color: $brand-primary;
+$button-fg-color: #fff;
+$button-pill-color: $button-bg-color;
+$button-secondary-bg: #f9f9f9;
+$button-secondary-color: #777;
+$button-secondary-border-color: $grey;
+
+// Form inputs
+$input-border: $grey;
+$input-spacing: 1rem;

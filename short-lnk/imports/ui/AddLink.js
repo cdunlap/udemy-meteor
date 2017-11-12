@@ -38,19 +38,21 @@ export default class AddLink extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.setState({isOpen: true})}>+ Add Link</button>
+        <button className="button" onClick={() => this.setState({isOpen: true})}>+ Add Link</button>
         <Modal isOpen={this.state.isOpen}
           contentLabel="Add link"
           onAfterOpen={() => this.refs.url.focus()}
-          onRequestClose={this.handleModalClose.bind(this)}>
+          onRequestClose={this.handleModalClose.bind(this)}
+          className="boxed-view__box"
+          overlayClassName="boxed-view boxed-view--modal">
           <h1>Add Link</h1>
           {this.state.error ? <p>{this.state.error}</p> : undefined}
-          <form onSubmit={this.onSubmit.bind(this)}>
+          <form onSubmit={this.onSubmit.bind(this)} className="boxed-view__form">
             <input type="text" ref="url" placeholder="URL" 
               value={this.state.url} onChange={this.onChange.bind(this)}/>
-            <button type="submit">Add Link</button>
+            <button type="submit" className="button">Add Link</button>
+            <button type="button" onClick={this.handleModalClose.bind(this)} className="button button--secondary">Cancel</button>
           </form>
-          <button onClick={this.handleModalClose.bind(this)}>Cancel</button>
         </Modal>
       </div>
     );

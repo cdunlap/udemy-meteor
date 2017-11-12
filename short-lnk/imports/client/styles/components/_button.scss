@@ -1,0 +1,27 @@
+.button {
+  background-color: $button-bg-color;
+  border: 1px solid darken($button-bg-color, 5%);
+  color: $button-fg-color;
+  cursor: pointer;
+  padding: $input-spacing;
+  text-transform: uppercase;
+  font-size: $base-font-size;
+  font-family: $font-family;
+  margin-bottom: $space;
+  
+  &--link {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  &--pill {
+    background-color: transparent;
+    border: 1px solid $button-pill-color;
+    color: $button-pill-color;
+  }
+  &--secondary {
+    background: $button-secondary-bg;
+    border: 1px solid $button-secondary-border-color;
+    color: $button-secondary-color;
+  }
+}

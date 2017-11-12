@@ -20,6 +20,10 @@ h1 {
   margin-bottom: $space;
 }
 
+p {
+  margin-bottom: $space;
+}
+
 a {
   color: $link-color;
 }
@@ -28,5 +32,9 @@ input[type=text], input[type=email], input[type=password] {
   border: 1px solid $input-border;
   font-size: $base-font-size;
   margin-bottom: $space;
-  padding: 1rem;
+  padding: $input-spacing;
+}
+
+button, input, textarea, select {
+  font-family: $font-family;
 }
