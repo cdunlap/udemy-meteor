@@ -50,6 +50,7 @@ export default class LinksListItem extends React.Component {
         <p>{this.props.shortUrl}</p>
         <p>{this.props.visible.toString()}</p>
         {this.renderStats()}
+        <a href={`https://udemy-meteor-caledunlap.c9users.io/${this.props._id}`} target="_blank">Visit</a>
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>{this.state.copied ? 'Copied' : 'Copy'}</button>
         <button onClick={() => {
           Meteor.call('links.setVisibility', this.props._id, !this.props.visible);
