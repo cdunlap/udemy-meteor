@@ -1,4 +1,4 @@
-// Colors
+// Colors (https://color.adobe.com/Copy-of-Picture-book-color-theme-10127683/?showPublished=true)
 $grey: #ddd;
 $brand-primary: #f24c27;
 
@@ -8,6 +8,7 @@ $font-family: 'Rubik', sans-serif;
 
 // Spacing
 $space: 1.4rem;
+$site-max-width: 50rem;
 
 $font-color: #3b3f42; // #222;
 $link-color: #000;
@@ -29,3 +30,7 @@ $button-secondary-border-color: $grey;
 // Form inputs
 $input-border: $grey;
 $input-spacing: 1rem;
+
+// Header
+$header-bg: $brand-primary;
+$header-fg: #fff;
